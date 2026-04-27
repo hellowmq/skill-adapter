@@ -1,0 +1,22 @@
+---
+description: TypeScript 项目编码风格规范
+alwaysApply: true
+enabled: true
+---
+
+# TypeScript Style
+
+## 格式
+- 使用 4 空格缩进（不使用 Tab）
+- 每行最大长度 100 字符
+- 使用单引号，行末加分号
+
+## 命名
+- 变量和函数使用 camelCase
+- 类和接口使用 PascalCase
+- 常量使用 UPPER_SNAKE_CASE
+
+## 文档
+- 函数上方必须有 JSDoc 注释
+- 复杂逻辑添加行内注释
+- 注释使用中文

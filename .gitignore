@@ -1,0 +1,19 @@
+# Build outputs
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / tool state
+.codebuddy/
+.cursor/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node (MCP server build)
+node_modules/
