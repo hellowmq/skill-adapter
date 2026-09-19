@@ -1,8 +1,8 @@
 # skill-adapter
 
-> 一份 Skill，适配所有工具。
+> 一份 Skill，生成多种 Agent 工具的交付格式。
 
-**skill-adapter** 是一个「元技能」（meta-skill），能将一份技能包在 **CodeBuddy、WorkBuddy、Claude Code、Hermes、Cursor、OpenClaw/GPT、MCP** 之间自由转换。
+**skill-adapter** 是一个「元技能」（meta-skill），把 skill 包、斜杠命令或规则转换为面向 **CodeBuddy、WorkBuddy、Claude Code、Hermes、Cursor、OpenClaw/GPT 和 MCP** 的产物。
 
 ## 为什么需要它
 
@@ -15,6 +15,13 @@
 ## 快速开始
 
 ```bash
+git clone https://github.com/hellowmq/skill-adapter.git
+cd skill-adapter
+
+# 用仓库自带示例验证安装
+python3 skills/skill-adapter/scripts/convert.py validate \
+    --src skills/skill-adapter/examples/anthropic-skill
+
 # 校验任意 skill / command / rule（自动识别来源形态）
 python3 skills/skill-adapter/scripts/convert.py validate --src <路径>
 
@@ -27,6 +34,10 @@ python3 skills/skill-adapter/scripts/convert.py build \
 ```
 
 产出在 `<src>/dist/<target>/` 下，每个目标附带 `INSTALL.md` 说明如何安装。
+
+## 转换边界
+
+不同工具的权限、触发方式和运行时能力不完全对等。本工具生成的是结构化迁移产物，不保证在所有宿主上语义无损或开箱即用。请阅读产出中的 `INSTALL.md`，并在目标工具中复核权限、路径和可执行行为。
 
 ## 支持的输入形态（自动检测）
 
@@ -95,4 +106,4 @@ cp -r skills/skill-adapter ~/.codebuddy/skills/
 
 ## License
 
-MIT
+[MIT](LICENSE)
